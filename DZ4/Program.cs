@@ -63,17 +63,16 @@ double[] Array(int num)
     {
         a[i] = new Random().NextDouble();
         Console.Write(Math.Round(a[i], 2) + " ");
-        Console.WriteLine();
     }
+    Console.WriteLine();
     return a;
 }
-double razniza(double[] Array)
+double razniza(double[] arr)
 {
-    double[] arr = new double[];
     double x = 0;
-    double min = 0;
+    double min = 1;
     double max = 0;
-    for (int i = 0; i < arr.Lenght; i++)
+    for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i] > max)
         {
@@ -84,36 +83,17 @@ double razniza(double[] Array)
             min = arr[i];
         }
     }
-    x = x + (max - min);
+    x = (max - min);
+    Console.Write("Максимальное число в массиве = ");
+    Console.WriteLine(Math.Round(max, 2));
+    Console.Write("Минимальное число в массиве = ");
+    Console.WriteLine(Math.Round(min, 2));
     return x;
 }
-    Console.Write("Введите размер массива ");
-    int num = Convert.ToInt32(Console.ReadLine());
-    Console.Write(Array(num));
-    Console.WriteLine("Разница между минимальным и максимальным элементом массива= " + razniza());
+Console.Write("Введите размер массива ");
+int num = Convert.ToInt32(Console.ReadLine());
+double[] b = Array(num);
+Console.WriteLine("Разница между минимальным и максимальным элементом массива = " + razniza(b));
 
 
-/*double Array(double massiv)
-{
-    double[] a = new double[8];
-    double razniza = 0;
-    double min = 0;
-    double max = 0;
-    for (int i = 0; i < 8; i++)
-    {
-        a[i] = new Random().NextDouble();
-        Console.Write(a[i]);
-        if (a[i] > max)
-        {
-            max = a[i];
-        }
-        if (a[i] < min)
-        {
-            min = a[i];
-        }
-    }
-    razniza = razniza + (max - min);
-    return razniza;
-}
-Console.Write("Разница между минимальным и максимальным элементом массива= ", Array(a);
-*/
+
